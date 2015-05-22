@@ -1,0 +1,14 @@
+		<p>You played: <strong><%= @game.sign.capitalize %></strong></p>
+		<p>Computer played: <strong><%= @computer_sign.capitalize %> </strong></p>
+		<div id="results">
+			<% if @game.sign.to_sym == @result %>
+			<p class="win">You Win!</p>
+			<% elsif @computer_sign == @result %>
+			<p class="lose">Nice try, but you lost.</p>
+			<% elsif @result == "tie" %>
+			<p class = "tie">Tie!</p>
+			<% else %>
+			<p>ERROR</p>
+			<% end %>
+		</div>
+		<button><a href="/games/new">Replay?</a></button>
